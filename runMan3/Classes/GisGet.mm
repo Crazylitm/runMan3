@@ -5,33 +5,33 @@ static GIS_LocationViewCtrl* static_init(){
     return [GIS_LocationViewCtrl sharedEngine];
 }
 static double static_getLatitude(){
-  //  BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] hadLoadlocationManagerFunFlag];
-    //if(hadflg == false)return 0.0;
-    return [[GIS_LocationViewCtrl sharedEngine] latitude];
+    BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] getFlag];
+    if(hadflg == false)return 0.0;
+    return [[GIS_LocationViewCtrl sharedEngine] getLatitude];
     
 }
 static double static_getlongitude(){
-  //  BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] hadLoadlocationManagerFunFlag];
-   // if(hadflg == false)return 0.0;
-    return [[GIS_LocationViewCtrl sharedEngine] longitude];
+    BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] getFlag];
+    if(hadflg == false)return 0.0;
+    return [[GIS_LocationViewCtrl sharedEngine] getLongitude];
     
 }
 static double static_getHorizontal(){
-  //  BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] hadLoadlocationManagerFunFlag];
-  //  if(hadflg == false)return 0.0;
-    return [[GIS_LocationViewCtrl sharedEngine] horizontal];
+    BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] getFlag];
+    if(hadflg == false)return 0.0;
+    return [[GIS_LocationViewCtrl sharedEngine] getHorizontal];
 }
 
 static double static_getVertical(){
-   // BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] hadLoadlocationManagerFunFlag];
-   // if(hadflg == false)return 0.0;
-    return [[GIS_LocationViewCtrl sharedEngine] vertical];
+    BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] getFlag];
+    if(hadflg == false)return 0.0;
+    return [[GIS_LocationViewCtrl sharedEngine] getVertical];
 }
 
 static double static_getTimestamp(){
-   // BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] hadLoadlocationManagerFunFlag];
-   // if(hadflg == false)return 0.0;
-    return 0.0;
+    BOOL hadflg = [[GIS_LocationViewCtrl sharedEngine] getFlag];
+    if(hadflg == false)return 0.0;
+    return [[GIS_LocationViewCtrl sharedEngine] getTime1970];
 }
 void CocosGis::CGisGet::init(){
    

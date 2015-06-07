@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 @synthesize man;
 static GIS_LocationViewCtrl *sharedEngine = nil;
-+ (GIS_LocationViewCtrl *) sharedEngine
++(GIS_LocationViewCtrl *) sharedEngine
 {
     @synchronized(self)     {
         if (!sharedEngine)
@@ -36,7 +36,7 @@ static GIS_LocationViewCtrl *sharedEngine = nil;
         // 开始测量
         [man startUpdatingLocation];
     }
-    return man;
+    return self;
 }
 
 // 如果GPS测量成果以下的函数被调用
@@ -55,7 +55,7 @@ static GIS_LocationViewCtrl *sharedEngine = nil;
     // 取得高度
      altitude = newLocation.altitude;
     // 取得时刻
-     timestamp = [newLocation timestamp];
+     timestamp = [[newLocation timestamp] timeIntervalSince1970];
     
     // 以下面的格式输出 format: <latitude>, <longitude>> +/- <accuracy>m @ <date-time>
     NSLog([newLocation description]);
@@ -71,5 +71,26 @@ static GIS_LocationViewCtrl *sharedEngine = nil;
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error{
     NSLog([error localizedDescription]);
+}
+-(BOOL) getFlag{
+    return hadLoadlocationManagerFunFlag;
+}
+-(CLLocationDegrees) getLatitude{
+    return latitude;
+}
+-(CLLocationDegrees) getLongitude{
+    return longitude;
+}
+-(CLLocationAccuracy) getHorizontal{
+    return horizontal;
+}
+-(CLLocationAccuracy) getVertical{
+    return vertical;
+}
+-(CLLocationAccuracy) getAltitude{
+    return altitude;
+}
+-(NSTimeInterval) getTime1970{
+    return timestamp;
 }
 @end

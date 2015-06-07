@@ -23,19 +23,23 @@
     // 取得高度
     CLLocationDistance altitude ;
     // 取得时刻
-    NSDate *timestamp ;
+    NSTimeInterval timestamp ;
     BOOL hadLoadlocationManagerFunFlag;
     
 }
 @property(nonatomic, retain) CLLocationManager *man;
-@property(nonatomic) BOOL hadLoadlocationManagerFunFlag;
-@property(nonatomic) CLLocationCoordinate2D coordinate ;
-@property(nonatomic) CLLocationDegrees latitude ;
-@property(nonatomic) CLLocationDegrees longitude ;
-@property(nonatomic) CLLocationAccuracy horizontal ;
-@property(nonatomic) CLLocationAccuracy vertical ;
-@property(nonatomic) CLLocationDistance altitude ;
-@property(nonatomic) NSDate *timestamp ;
+
+
+-(BOOL) getFlag;
+-(CLLocationDegrees) getLatitude;
+-(CLLocationDegrees) getLongitude;
+-(CLLocationAccuracy) getHorizontal;
+-(CLLocationAccuracy) getVertical;
+-(CLLocationAccuracy) getAltitude;
+-(NSTimeInterval) getTime1970;
++(GIS_LocationViewCtrl *) sharedEngine;
+
+
 
 //+( GIS_LocationViewCtrl * ) sharedEngineFun;
 @end
