@@ -3,6 +3,9 @@
 //http://litianmin.com/litm/index.php?latitude=30.282325&longitude=120.021781&timestamp=1393496433.804634&id=a
 // just for test 
 // just just for test
+// just for test i12345
+
+>>>>>>> updae README.md & index.php
 define('TMP_FILE', "/home/wwwroot/litm/log/tmp.log");
 define('SECONDS', 200);//毫秒秒
 define('DISTANCE', 50);//米
